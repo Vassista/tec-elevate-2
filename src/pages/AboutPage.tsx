@@ -2,34 +2,35 @@ import { Users, Target, Shield, Zap } from 'lucide-react';
 import { HeroSection } from '../components/HeroSection';
 import { CTASection } from '../components/CTASection';
 
-export function AboutPage() {
-  const stats = [
-    { label: 'Years Experience', value: '15+' },
-    { label: 'Enterprise Projects', value: '200+' },
-    { label: 'Client Retention', value: '98%' },
-    { label: 'Certified Experts', value: '50+' },
-  ];
+const stats = [
+  { label: 'Years Experience', value: '15+' },
+  { label: 'Enterprise Projects', value: '200+' },
+  { label: 'Client Retention', value: '98%' },
+  { label: 'Certified Experts', value: '50+' },
+];
 
-  const leaders = [
-    {
-      name: 'Alex Rivera',
-      role: 'Chief Technology Officer',
-      bio: 'Ex-Google Principal Engineer with 15 years of experience scaling distributed systems.',
-      initials: 'AR'
-    },
-    {
-      name: 'Sarah Chen',
-      role: 'VP of Engineering',
-      bio: 'Specializes in AI implementation and building high-velocity engineering cultures.',
-      initials: 'SC'
-    },
-    {
-      name: 'Marcus Thorne',
-      role: 'Head of Product',
-      bio: 'Bridge between business strategy and technical execution. Previously at McKinsey Digital.',
-      initials: 'MT'
-    }
-  ];
+const leaders = [
+  {
+    name: 'Alex Rivera',
+    role: 'Chief Technology Officer',
+    bio: 'Ex-Google Principal Engineer with 15 years of experience scaling distributed systems.',
+    initials: 'AR'
+  },
+  {
+    name: 'Sarah Chen',
+    role: 'VP of Engineering',
+    bio: 'Specializes in AI implementation and building high-velocity engineering cultures.',
+    initials: 'SC'
+  },
+  {
+    name: 'Marcus Thorne',
+    role: 'Head of Product',
+    bio: 'Bridge between business strategy and technical execution. Previously at McKinsey Digital.',
+    initials: 'MT'
+  }
+];
+
+export function AboutPage() {
 
   return (
     <div className="bg-background min-h-screen">

@@ -11,7 +11,7 @@ interface CTASectionProps {
   className?: string;
 }
 
-export function CTASection({ title, description, primaryAction, className = '' }: CTASectionProps) {
+export const CTASection = React.memo(function CTASection({ title, description, primaryAction, className = '' }: CTASectionProps) {
   return (
     <section className={`py-20 bg-white border-t border-slate-200 ${className}`}>
       <div className="container-custom">
@@ -37,4 +37,4 @@ export function CTASection({ title, description, primaryAction, className = '' }
       </div>
     </section>
   );
-}
+});

@@ -7,7 +7,7 @@ interface HeroSectionProps {
   className?: string;
 }
 
-export function HeroSection({ badgeText, title, description, className = '' }: HeroSectionProps) {
+export const HeroSection = React.memo(function HeroSection({ badgeText, title, description, className = '' }: HeroSectionProps) {
   return (
     <section className={`pt-32 pb-24 relative overflow-hidden ${className}`}>
       {/* Background Grid with Fade Out */}
@@ -29,4 +29,4 @@ export function HeroSection({ badgeText, title, description, className = '' }: H
       </div>
     </section>
   );
-}
+});
