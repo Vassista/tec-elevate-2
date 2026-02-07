@@ -1,4 +1,4 @@
-import { Brain, Cloud, LayoutDashboard, TrendingUp, ShieldCheck, Code, Check } from 'lucide-react';
+import { Brain, Cloud, LayoutDashboard, TrendingUp, ShieldCheck, Code, Check, Flame } from 'lucide-react';
 
 export function ServicesPage() {
   const services = [
@@ -9,6 +9,10 @@ export function ServicesPage() {
       subtitle: 'Predictive analytics & Automation',
       description: 'Artificial intelligence offers significant opportunities, but implementation requires careful strategy and execution. We help you identify high-impact use cases, select appropriate technologies, and integrate AI solutions that enhance productivity.',
       capabilities: ['Readiness Assessment', 'Model Training', 'Process Automation', 'Change Management'],
+      color: 'text-violet-500',
+      bgColor: 'bg-violet-500/10 hover:bg-violet-500 hover:text-white',
+      borderColor: 'group-hover:border-violet-500/50',
+      tag: 'Trending'
     },
     {
       id: 'salesforce-crm',
@@ -17,6 +21,9 @@ export function ServicesPage() {
       subtitle: 'Revenue operations optimization',
       description: 'Salesforce is powerful, but only when configured to match your unique business processes. We help you get more value from your CRM through strategic consulting, custom development, and seamless integrations.',
       capabilities: ['Implementation', 'Custom Workflows', 'Integrations', 'User Adoption'],
+      color: 'text-blue-500',
+      bgColor: 'bg-blue-500/10 hover:bg-blue-500 hover:text-white',
+      borderColor: 'group-hover:border-blue-500/50'
     },
     {
       id: 'cloud-infrastructure',
@@ -25,6 +32,9 @@ export function ServicesPage() {
       subtitle: 'Scalable & secure architecture',
       description: 'Modernize your infrastructure to support growth. We help you migrate to the cloud, optimize existing environments, and implement DevOps best practices for faster deployment cycles.',
       capabilities: ['Migration Strategy', 'AWS/Azure/GCP', 'DevOps & CI/CD', 'Cost Optimization'],
+      color: 'text-sky-500',
+      bgColor: 'bg-sky-500/10 hover:bg-sky-500 hover:text-white',
+      borderColor: 'group-hover:border-sky-500/50'
     },
     {
       id: 'cybersecurity',
@@ -33,6 +43,9 @@ export function ServicesPage() {
       subtitle: 'Risk management & compliance',
       description: 'Protect your digital assets with a comprehensive security strategy. We conduct audits, implement robust defenses, and ensure compliance with industry regulations.',
       capabilities: ['Security Audits', 'Compliance (SOC2/HIPAA)', 'Identity Management', 'Threat Detection'],
+      color: 'text-emerald-500',
+      bgColor: 'bg-emerald-500/10 hover:bg-emerald-500 hover:text-white',
+      borderColor: 'group-hover:border-emerald-500/50'
     },
     {
       id: 'software-development',
@@ -41,6 +54,9 @@ export function ServicesPage() {
       subtitle: 'Web & mobile applications',
       description: 'Build custom applications that solve unique business problems. Our full-stack engineering team delivers robust, scalable software using modern frameworks and architectural patterns.',
       capabilities: ['Web Applications', 'Mobile Development', 'API Design', 'Legacy Modernization'],
+      color: 'text-indigo-500',
+      bgColor: 'bg-indigo-500/10 hover:bg-indigo-500 hover:text-white',
+      borderColor: 'group-hover:border-indigo-500/50'
     },
     {
       id: 'strategic-consulting',
@@ -49,32 +65,54 @@ export function ServicesPage() {
       subtitle: 'Fractional CTO & Roadmapping',
       description: 'Align technology investments with business goals. We provide executive-level guidance to help you navigate complex technology decisions and build a roadmap for long-term success.',
       capabilities: ['Tech Roadmap', 'Vendor Selection', 'Digital Transformation', 'Team Structure'],
+      color: 'text-amber-500',
+      bgColor: 'bg-amber-500/10 hover:bg-amber-500 hover:text-white',
+      borderColor: 'group-hover:border-amber-500/50'
     },
   ];
 
   return (
     <div className="bg-background min-h-screen">
       {/* Header */}
-      <section className="pt-32 pb-20 bg-surface-highlight border-b border-border">
-        <div className="container-custom text-center">
-          <p className="text-sm font-semibold text-accent mb-4 tracking-widest uppercase">Our Capabilities</p>
-          <h1 className="text-4xl md:text-6xl font-display font-bold text-primary mb-6">
-            Technical Excellence for<br /><span className="text-accent">Modern Enterprise</span>
-          </h1>
-          <p className="text-lg text-text-muted max-w-2xl mx-auto leading-relaxed">
-            We deliver end-to-end technology solutions, from strategic planning to implementation and ongoing optimization.
-          </p>
+      {/* Hero - Modern Enterprise Style */}
+      <section className="pt-32 pb-24 relative overflow-hidden">
+        {/* Background Grid */}
+        {/* Background Grid with Fade Out */ }
+        <div className="absolute inset-0 bg-[linear-gradient(rgba(0,0,0,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(0,0,0,0.02)_1px,transparent_1px)] bg-[size:40px_40px] pointer-events-none [mask-image:linear-gradient(to_bottom,black_60%,transparent_100%)]"></div>
+
+        <div className="container-custom text-center relative z-10">
+           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-100 border border-slate-200 text-xs font-semibold text-slate-600 mb-8 tracking-wide uppercase">
+             <div className="w-1.5 h-1.5 rounded-full bg-slate-500 animate-pulse"></div>
+             Our Capabilities
+           </div>
+
+           <h1 className="text-5xl md:text-7xl font-display font-bold text-slate-900 mb-8 tracking-tight leading-[1.1]">
+            Technical Excellence for<br />
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-violet-600">Modern Enterprise.</span>
+           </h1>
+
+           <p className="text-xl text-slate-500 max-w-3xl mx-auto leading-relaxed font-light">
+             We deliver end-to-end technology solutions, from strategic planning to implementation and ongoing optimization.
+           </p>
         </div>
       </section>
 
       {/* Services Grid */}
       <section className="section">
         <div className="container-custom">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {services.map((service) => (
-              <div key={service.id} className="card group hover:border-accent">
-                <div className="w-12 h-12 bg-surface-highlight rounded-lg flex items-center justify-center text-primary group-hover:bg-accent group-hover:text-white transition-colors mb-6 border border-border">
-                  <service.icon className="w-6 h-6" />
+              <div key={service.id} className={`relative p-8 rounded-3xl border border-border shadow-sm hover:shadow-md transition-all duration-300 group ${service.borderColor} bg-white h-full flex flex-col`}>
+                {/* Optional Tag */}
+                {service.tag && (
+                  <div className="absolute top-6 right-6 inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-violet-50 border border-violet-100 text-violet-600 text-[11px] font-bold uppercase tracking-wider">
+                     <Flame className="w-3 h-3 fill-current" />
+                     {service.tag}
+                  </div>
+                )}
+
+                <div className={`w-14 h-14 rounded-2xl flex items-center justify-center transition-all duration-300 mb-6 ${service.bgColor} ${service.color}`}>
+                  <service.icon className="w-7 h-7" />
                 </div>
 
                 <h3 className="text-xl font-display font-bold text-primary mb-1">
@@ -83,14 +121,16 @@ export function ServicesPage() {
                 <p className="text-sm font-medium text-accent mb-4">
                   {service.subtitle}
                 </p>
-                <p className="text-text-muted text-sm leading-relaxed mb-6">
+                <p className="text-text-muted text-sm leading-relaxed mb-6 flex-grow">
                   {service.description}
                 </p>
 
-                <div className="space-y-2">
+                <div className="space-y-3 pt-6 border-t border-border/50">
                   {service.capabilities.map((cap) => (
-                    <div key={cap} className="flex items-center text-sm text-text-light">
-                      <Check className="w-4 h-4 text-functional-success mr-2" />
+                    <div key={cap} className="flex items-center text-sm text-text-muted font-medium">
+                      <div className="w-5 h-5 rounded-full bg-functional-success/10 flex items-center justify-center mr-3 shrink-0">
+                         <Check className="w-3 h-3 text-functional-success" />
+                      </div>
                       {cap}
                     </div>
                   ))}
@@ -101,16 +141,23 @@ export function ServicesPage() {
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="py-24 bg-primary text-white">
-        <div className="container-custom text-center">
-          <h2 className="text-3xl font-display font-bold mb-6">Build a future-ready foundation</h2>
-          <p className="text-white/60 mb-8 max-w-xl mx-auto">
-            Discuss your project with our engineering leaders. No sales pressure, just technical clarity.
-          </p>
-          <a href="/contact" className="btn bg-white text-primary hover:bg-white/90">
-            Schedule Technical Discovery
-          </a>
+      {/* CTA - Floating Card Design */}
+      <section className="py-20 bg-white border-t border-slate-200">
+        <div className="container-custom">
+          <div className="relative rounded-[2.5rem] bg-slate-50 overflow-hidden px-6 py-16 text-center border border-slate-100 shadow-sm">
+            {/* Grid Background */}
+            <div className="absolute inset-0 bg-[linear-gradient(rgba(0,0,0,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(0,0,0,0.02)_1px,transparent_1px)] bg-[size:40px_40px] pointer-events-none"></div>
+
+            <div className="relative z-10">
+              <h2 className="text-3xl md:text-4xl font-display font-bold mb-6 tracking-tight text-slate-900">Build a future-ready foundation</h2>
+              <p className="text-slate-500 text-lg max-w-2xl mx-auto mb-8 font-light leading-relaxed">
+                Discuss your project with our engineering leaders. No sales pressure, just technical clarity.
+              </p>
+              <a href="/contact" className="inline-flex items-center justify-center px-8 py-3 text-base font-semibold text-white transition-all duration-200 bg-slate-900 rounded-full hover:bg-slate-800 hover:shadow-lg hover:-translate-y-0.5 shadow-md">
+                Schedule Technical Discovery
+              </a>
+            </div>
+          </div>
         </div>
       </section>
     </div>

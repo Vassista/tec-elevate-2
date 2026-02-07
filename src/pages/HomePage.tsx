@@ -6,7 +6,13 @@ import {
   BarChart3,
   Layers,
   Smartphone,
-  Lightbulb
+  Lightbulb,
+  ShieldCheck,
+  Database,
+  Server,
+  Box,
+  Code2,
+  Globe
 } from 'lucide-react';
 
 export function HomePage() {
@@ -15,37 +21,55 @@ export function HomePage() {
       title: 'AI Transformation',
       description: 'Implement AI solutions that enhance productivity and decision-making across your organization.',
       icon: Cpu,
-      href: '/services#ai-transformation'
+      href: '/services#ai-transformation',
+      color: 'text-violet-500',
+      bgColor: 'bg-violet-500/10',
+      hoverColor: 'group-hover:text-violet-500 group-hover:bg-violet-500/10'
     },
     {
       title: 'Salesforce CRM',
       description: 'Optimize your Salesforce platform to improve customer relationships and drive revenue growth.',
       icon: BarChart3,
-      href: '/services#salesforce-crm'
+      href: '/services#salesforce-crm',
+      color: 'text-blue-500',
+      bgColor: 'bg-blue-500/10',
+      hoverColor: 'group-hover:text-blue-500 group-hover:bg-blue-500/10'
     },
     {
       title: 'Digital Transformation',
       description: 'Modernize systems, automate processes, and adopt cloud technologies for operational excellence.',
       icon: Cloud,
-      href: '/services#digital-transformation'
+      href: '/services#digital-transformation',
+      color: 'text-sky-500',
+      bgColor: 'bg-sky-500/10',
+      hoverColor: 'group-hover:text-sky-500 group-hover:bg-sky-500/10'
     },
     {
       title: 'IT Project Management',
       description: 'Execute technology initiatives on time and on budget with proven governance frameworks.',
       icon: Layers,
-      href: '/services#it-project-management'
+      href: '/services#it-project-management',
+      color: 'text-rose-500',
+      bgColor: 'bg-rose-500/10',
+      hoverColor: 'group-hover:text-rose-500 group-hover:bg-rose-500/10'
     },
     {
       title: 'App Development',
       description: 'Build web and mobile applications that solve customer needs and support business goals.',
       icon: Smartphone,
-      href: '/services#app-development'
+      href: '/services#app-development',
+      color: 'text-indigo-500',
+      bgColor: 'bg-indigo-500/10',
+      hoverColor: 'group-hover:text-indigo-500 group-hover:bg-indigo-500/10'
     },
     {
       title: 'Strategic Consulting',
       description: 'Develop technology roadmaps that align IT investments with business strategy.',
       icon: Lightbulb,
-      href: '/services#strategic-consulting'
+      href: '/services#strategic-consulting',
+      color: 'text-amber-500',
+      bgColor: 'bg-amber-500/10',
+      hoverColor: 'group-hover:text-amber-500 group-hover:bg-amber-500/10'
     },
   ];
 
@@ -67,8 +91,8 @@ export function HomePage() {
             </div>
 
             <h1 className="text-5xl md:text-7xl lg:text-8xl font-display font-bold text-primary tracking-tight mb-8 animate-slide-up">
-              Engineering <span className="text-transparent bg-clip-text bg-gradient-accent">Integrity</span><br />
-              into every system.
+              Elevating <span className="text-transparent bg-clip-text bg-gradient-accent">Integrity</span><br />
+              in every system.
             </h1>
 
             <p className="text-xl text-text-muted max-w-2xl leading-relaxed mb-10 animate-slide-up" style={{ animationDelay: '0.1s' }}>
@@ -106,12 +130,12 @@ export function HomePage() {
               <Link
                 key={service.title}
                 to={service.href}
-                className="card group hover:border-accent/50 hover:bg-white"
+                className="p-8 rounded-3xl border border-border bg-white shadow-sm hover:shadow-md transition-all duration-300 group hover:-translate-y-1 block"
               >
-                <div className="w-12 h-12 rounded-lg bg-surface-highlight border border-border flex items-center justify-center text-primary group-hover:text-accent group-hover:bg-accent/5 transition-colors mb-6">
-                  <service.icon className="w-6 h-6" />
+                <div className={`w-14 h-14 rounded-2xl border border-border flex items-center justify-center transition-colors mb-6 ${service.bgColor} ${service.color}`}>
+                  <service.icon className="w-7 h-7" />
                 </div>
-                <h3 className="text-xl font-display font-semibold text-primary mb-3">
+                <h3 className="text-xl font-display font-bold text-primary mb-3">
                   {service.title}
                 </h3>
                 <p className="text-text-muted text-sm leading-relaxed">
@@ -123,36 +147,181 @@ export function HomePage() {
         </div>
       </section>
 
-      {/* Trust Section */}
-      <section className="py-20 bg-background">
-        <div className="container-custom">
-          <p className="text-center text-sm font-semibold text-text-light uppercase tracking-widest mb-12">
-            Trusted by modern teams
-          </p>
-          <div className="flex flex-wrap justify-center items-center gap-12 md:gap-20 opacity-40 grayscale hover:grayscale-0 transition-all duration-500">
-             {/* Technical looking placeholders - clear geometric shapes */}
-             {[1, 2, 3, 4, 5].map((i) => (
-               <div key={i} className="h-8 w-32 bg-primary/20 rounded-md"></div>
-             ))}
+      {/* Engineering Excellence Section - Scrolling Ticker */}
+      <section className="py-24 bg-white border-t border-gray-100 overflow-hidden">
+        <div className="container-custom mb-16 text-center">
+           <h3 className="text-sm font-semibold text-gray-500 uppercase tracking-[0.2em]">
+            Engineering DNA
+          </h3>
+        </div>
+
+        <div className="relative w-full">
+          {/* Enhanced Gradients for Vercel-like fade */}
+          <div className="absolute left-0 top-0 bottom-0 w-32 z-10 bg-gradient-to-r from-white via-white/80 to-transparent pointer-events-none"></div>
+          <div className="absolute right-0 top-0 bottom-0 w-32 z-10 bg-gradient-to-l from-white via-white/80 to-transparent pointer-events-none"></div>
+
+          {/* Row 1: Principles (Left Scroll) */}
+          <div className="flex w-max animate-scroll hover:pause group">
+            {[...Array(4)].map((_, i) => (
+              <div key={`row1-${i}`} className="flex gap-8 shrink-0 pr-8">
+                 {/* Cloud Native */}
+                 <div className="flex items-center gap-4 px-5 py-3 rounded-lg border border-gray-100 bg-white/50 hover:border-gray-200 hover:bg-gray-50/50 transition-all duration-300">
+                   <div className="p-2 rounded-md bg-blue-50 text-blue-600">
+                     <Cloud className="w-5 h-5" />
+                   </div>
+                   <div className="text-left">
+                     <div className="font-medium text-gray-900 text-sm">Cloud Native</div>
+                     <div className="text-xs text-gray-500">Scalable Infrastructure</div>
+                   </div>
+                 </div>
+
+                 {/* Modern Stack */}
+                 <div className="flex items-center gap-4 px-5 py-3 rounded-lg border border-gray-100 bg-white/50 hover:border-gray-200 hover:bg-gray-50/50 transition-all duration-300">
+                   <div className="p-2 rounded-md bg-emerald-50 text-emerald-600">
+                     <Cpu className="w-5 h-5" />
+                   </div>
+                   <div className="text-left">
+                     <div className="font-medium text-gray-900 text-sm">Modern Stack</div>
+                     <div className="text-xs text-gray-500">Future-proof Code</div>
+                   </div>
+                 </div>
+
+                 {/* Data Driven */}
+                 <div className="flex items-center gap-4 px-5 py-3 rounded-lg border border-gray-100 bg-white/50 hover:border-gray-200 hover:bg-gray-50/50 transition-all duration-300">
+                   <div className="p-2 rounded-md bg-violet-50 text-violet-600">
+                     <BarChart3 className="w-5 h-5" />
+                   </div>
+                   <div className="text-left">
+                     <div className="font-medium text-gray-900 text-sm">Data Driven</div>
+                     <div className="text-xs text-gray-500">Actionable Insights</div>
+                   </div>
+                 </div>
+
+                 {/* Secure by Design */}
+                 <div className="flex items-center gap-4 px-5 py-3 rounded-lg border border-gray-100 bg-white/50 hover:border-gray-200 hover:bg-gray-50/50 transition-all duration-300">
+                   <div className="p-2 rounded-md bg-amber-50 text-amber-600">
+                     <ShieldCheck className="w-5 h-5" />
+                   </div>
+                   <div className="text-left">
+                     <div className="font-medium text-gray-900 text-sm">Secure Core</div>
+                     <div className="text-xs text-gray-500">Best Practices</div>
+                   </div>
+                 </div>
+
+                 {/* DevOps Culture */}
+                 <div className="flex items-center gap-4 px-5 py-3 rounded-lg border border-gray-100 bg-white/50 hover:border-gray-200 hover:bg-gray-50/50 transition-all duration-300">
+                   <div className="p-2 rounded-md bg-indigo-50 text-indigo-600">
+                     <Layers className="w-5 h-5" />
+                   </div>
+                   <div className="text-left">
+                     <div className="font-medium text-gray-900 text-sm">DevOps Culture</div>
+                     <div className="text-xs text-gray-500">CI/CD Pipeline</div>
+                   </div>
+                 </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="h-8"></div>
+
+          {/* Row 2: Technology Stack (Reverse Scroll) */}
+          <div className="flex w-max animate-scroll-reverse hover:pause group">
+            {[...Array(4)].map((_, i) => (
+              <div key={`row2-${i}`} className="flex gap-8 shrink-0 pr-8">
+                 {/* Frontend */}
+                 <div className="flex items-center gap-4 px-5 py-3 rounded-lg border border-gray-100 bg-white/50 hover:border-gray-200 hover:bg-gray-50/50 transition-all duration-300">
+                   <div className="p-2 rounded-md bg-sky-50 text-sky-600">
+                     <Code2 className="w-5 h-5" />
+                   </div>
+                   <div className="text-left">
+                     <div className="font-medium text-gray-900 text-sm">React & TS</div>
+                     <div className="text-xs text-gray-500">Frontend</div>
+                   </div>
+                 </div>
+
+                 {/* Backend */}
+                 <div className="flex items-center gap-4 px-5 py-3 rounded-lg border border-gray-100 bg-white/50 hover:border-gray-200 hover:bg-gray-50/50 transition-all duration-300">
+                   <div className="p-2 rounded-md bg-emerald-50 text-emerald-600">
+                     <Server className="w-5 h-5" />
+                   </div>
+                   <div className="text-left">
+                     <div className="font-medium text-gray-900 text-sm">Node & Python</div>
+                     <div className="text-xs text-gray-500">Backend</div>
+                   </div>
+                 </div>
+
+                 {/* Infrastructure */}
+                 <div className="flex items-center gap-4 px-5 py-3 rounded-lg border border-gray-100 bg-white/50 hover:border-gray-200 hover:bg-gray-50/50 transition-all duration-300">
+                   <div className="p-2 rounded-md bg-orange-50 text-orange-600">
+                     <Box className="w-5 h-5" />
+                   </div>
+                   <div className="text-left">
+                     <div className="font-medium text-gray-900 text-sm">Docker & K8s</div>
+                     <div className="text-xs text-gray-500">Infrastructure</div>
+                   </div>
+                 </div>
+
+                 {/* Database */}
+                 <div className="flex items-center gap-4 px-5 py-3 rounded-lg border border-gray-100 bg-white/50 hover:border-gray-200 hover:bg-gray-50/50 transition-all duration-300">
+                   <div className="p-2 rounded-md bg-indigo-50 text-indigo-600">
+                     <Database className="w-5 h-5" />
+                   </div>
+                   <div className="text-left">
+                     <div className="font-medium text-gray-900 text-sm">PostgreSQL</div>
+                     <div className="text-xs text-gray-500">Database</div>
+                   </div>
+                 </div>
+
+                 {/* Cloud */}
+                 <div className="flex items-center gap-4 px-5 py-3 rounded-lg border border-gray-100 bg-white/50 hover:border-gray-200 hover:bg-gray-50/50 transition-all duration-300">
+                   <div className="p-2 rounded-md bg-blue-50 text-blue-600">
+                     <Globe className="w-5 h-5" />
+                   </div>
+                   <div className="text-left">
+                     <div className="font-medium text-gray-900 text-sm">AWS & Azure</div>
+                     <div className="text-xs text-gray-500">Cloud</div>
+                   </div>
+                 </div>
+
+                  {/* Mobile - React Native */}
+                 <div className="flex items-center gap-4 px-5 py-3 rounded-lg border border-gray-100 bg-white/50 hover:border-gray-200 hover:bg-gray-50/50 transition-all duration-300">
+                   <div className="p-2 rounded-md bg-pink-50 text-pink-600">
+                     <Smartphone className="w-5 h-5" />
+                   </div>
+                   <div className="text-left">
+                     <div className="font-medium text-gray-900 text-sm">React Native</div>
+                     <div className="text-xs text-gray-500">Mobile</div>
+                   </div>
+                 </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-32 bg-primary text-white relative overflow-hidden">
-        <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:40px_40px] opacity-20"></div>
-        <div className="container-custom relative z-10 text-center">
-          <h2 className="text-4xl md:text-5xl font-display font-bold mb-6 text-white">
-            Ready to scale your infrastructure?
-          </h2>
-          <p className="text-lg text-white/60 max-w-2xl mx-auto mb-10">
-            Schedule a technical consultation to discuss your roadmap and architectural needs.
-          </p>
-          <Link to="/contact" className="btn bg-white text-primary hover:bg-gray-100 border-none">
-            Book Technical Audit
-          </Link>
+      {/* CTA - Floating Card Design */}
+      <section className="py-20 bg-white border-t border-slate-200">
+        <div className="container-custom">
+          <div className="relative rounded-[2.5rem] bg-slate-50 overflow-hidden px-6 py-16 text-center border border-slate-100 shadow-sm">
+            {/* Grid Background */}
+            <div className="absolute inset-0 bg-[linear-gradient(rgba(0,0,0,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(0,0,0,0.02)_1px,transparent_1px)] bg-[size:40px_40px] pointer-events-none"></div>
+
+            <div className="relative z-10">
+              <h2 className="text-3xl md:text-4xl font-display font-bold mb-6 tracking-tight text-slate-900">
+                Ready to scale your infrastructure?
+              </h2>
+              <p className="text-slate-500 text-lg max-w-2xl mx-auto mb-8 font-light leading-relaxed">
+                Join the forward-thinking companies building their future with Tec Elevate.
+              </p>
+              <Link to="/contact" className="inline-flex items-center justify-center px-8 py-3 text-base font-semibold text-white transition-all duration-200 bg-slate-900 rounded-full hover:bg-slate-800 hover:shadow-lg hover:-translate-y-0.5 shadow-md">
+                Start Your Transformation
+              </Link>
+            </div>
+          </div>
         </div>
       </section>
+
+
     </div>
   );
 }

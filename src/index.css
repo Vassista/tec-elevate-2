@@ -71,4 +71,22 @@
     background-size: 40px 40px;
     mask-image: radial-gradient(ellipse at center, black 50%, transparent 100%);
   }
+
+  /* Infinite Scroll Animation */
+  @keyframes scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+
+  .animate-scroll {
+    animation: scroll 60s linear infinite;
+  }
+
+  .animate-scroll-reverse {
+    animation: scroll 60s linear infinite reverse;
+  }
+
+  .animate-scroll:hover, .animate-scroll-reverse:hover {
+    animation-play-state: paused;
+  }
 }

@@ -4,7 +4,7 @@ import { Footer } from './components/Footer';
 import { HomePage } from './pages/HomePage';
 import { ServicesPage } from './pages/ServicesPage';
 import { AboutPage } from './pages/AboutPage';
-import { WhyTecElevatePage } from './pages/WhyTecElevatePage';
+import { ApproachPage } from './pages/ApproachPage';
 import { ContactPage } from './pages/ContactPage';
 
 function App() {
@@ -17,7 +17,7 @@ function App() {
             <Route path="/" element={<HomePage />} />
             <Route path="/services" element={<ServicesPage />} />
             <Route path="/about" element={<AboutPage />} />
-            <Route path="/why-tec-elevate" element={<WhyTecElevatePage />} />
+            <Route path="/approach" element={<ApproachPage />} />
             <Route path="/contact" element={<ContactPage />} />
           </Routes>
         </main>

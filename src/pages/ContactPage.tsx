@@ -24,15 +24,24 @@ export function ContactPage() {
 
   return (
     <div className="bg-background min-h-screen">
-      <section className="pt-32 pb-20 bg-surface-highlight border-b border-border">
-        <div className="container-custom text-center">
-          <p className="text-sm font-semibold text-accent mb-4 tracking-widest uppercase">Get in Touch</p>
-          <h1 className="text-4xl md:text-6xl font-display font-bold text-primary mb-6">
-            Let's build something <span className="text-accent">great</span>.
-          </h1>
-          <p className="text-lg text-text-muted max-w-2xl mx-auto leading-relaxed">
-            Ready to start your digital transformation journey? Our team is ready to help you navigate the complex technology landscape.
-          </p>
+      {/* Hero - Modern Enterprise Style */}
+      <section className="pt-32 pb-24 relative overflow-hidden">
+        {/* Background Grid */}
+        <div className="absolute inset-0 bg-[linear-gradient(rgba(0,0,0,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(0,0,0,0.02)_1px,transparent_1px)] bg-[size:40px_40px] pointer-events-none"></div>
+
+        <div className="container-custom text-center relative z-10">
+           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-100 border border-slate-200 text-xs font-semibold text-slate-600 mb-8 tracking-wide uppercase">
+             <div className="w-1.5 h-1.5 rounded-full bg-slate-500 animate-pulse"></div>
+             Get in Touch
+           </div>
+
+           <h1 className="text-5xl md:text-7xl font-display font-bold text-slate-900 mb-8 tracking-tight leading-[1.1]">
+            Let's build something <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-violet-600">great.</span>
+           </h1>
+
+           <p className="text-xl text-slate-500 max-w-3xl mx-auto leading-relaxed font-light">
+             Ready to start your digital transformation journey? Our team is ready to help you navigate the complex technology landscape.
+           </p>
         </div>
       </section>
 

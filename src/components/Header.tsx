@@ -24,7 +24,7 @@ export function Header() {
   const navigation = [
     { name: 'Services', href: '/services' },
     { name: 'About', href: '/about' },
-    { name: 'Why Tec Elevate', href: '/why-tec-elevate' },
+    { name: 'Approach', href: '/approach' },
     { name: 'Contact', href: '/contact' },
   ];
 
