@@ -1,4 +1,6 @@
 import { Brain, Cloud, LayoutDashboard, TrendingUp, ShieldCheck, Code, Check, Flame } from 'lucide-react';
+import { HeroSection } from '../components/HeroSection';
+import { CTASection } from '../components/CTASection';
 
 export function ServicesPage() {
   const services = [
@@ -75,27 +77,11 @@ export function ServicesPage() {
     <div className="bg-background min-h-screen">
       {/* Header */}
       {/* Hero - Modern Enterprise Style */}
-      <section className="pt-32 pb-24 relative overflow-hidden">
-        {/* Background Grid */}
-        {/* Background Grid with Fade Out */ }
-        <div className="absolute inset-0 bg-[linear-gradient(rgba(0,0,0,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(0,0,0,0.02)_1px,transparent_1px)] bg-[size:40px_40px] pointer-events-none [mask-image:linear-gradient(to_bottom,black_60%,transparent_100%)]"></div>
-
-        <div className="container-custom text-center relative z-10">
-           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-100 border border-slate-200 text-xs font-semibold text-slate-600 mb-8 tracking-wide uppercase">
-             <div className="w-1.5 h-1.5 rounded-full bg-slate-500 animate-pulse"></div>
-             Our Capabilities
-           </div>
-
-           <h1 className="text-5xl md:text-7xl font-display font-bold text-slate-900 mb-8 tracking-tight leading-[1.1]">
-            Technical Excellence for<br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-violet-600">Modern Enterprise.</span>
-           </h1>
-
-           <p className="text-xl text-slate-500 max-w-3xl mx-auto leading-relaxed font-light">
-             We deliver end-to-end technology solutions, from strategic planning to implementation and ongoing optimization.
-           </p>
-        </div>
-      </section>
+      <HeroSection
+        badgeText="Our Capabilities"
+        title={<>Technical Excellence for<br /><span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-violet-600">Modern Enterprise.</span></>}
+        description="We deliver end-to-end technology solutions, from strategic planning to implementation and ongoing optimization."
+      />
 
       {/* Services Grid */}
       <section className="section">
@@ -142,24 +128,11 @@ export function ServicesPage() {
       </section>
 
       {/* CTA - Floating Card Design */}
-      <section className="py-20 bg-white border-t border-slate-200">
-        <div className="container-custom">
-          <div className="relative rounded-[2.5rem] bg-slate-50 overflow-hidden px-6 py-16 text-center border border-slate-100 shadow-sm">
-            {/* Grid Background */}
-            <div className="absolute inset-0 bg-[linear-gradient(rgba(0,0,0,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(0,0,0,0.02)_1px,transparent_1px)] bg-[size:40px_40px] pointer-events-none"></div>
-
-            <div className="relative z-10">
-              <h2 className="text-3xl md:text-4xl font-display font-bold mb-6 tracking-tight text-slate-900">Build a future-ready foundation</h2>
-              <p className="text-slate-500 text-lg max-w-2xl mx-auto mb-8 font-light leading-relaxed">
-                Discuss your project with our engineering leaders. No sales pressure, just technical clarity.
-              </p>
-              <a href="/contact" className="inline-flex items-center justify-center px-8 py-3 text-base font-semibold text-white transition-all duration-200 bg-slate-900 rounded-full hover:bg-slate-800 hover:shadow-lg hover:-translate-y-0.5 shadow-md">
-                Schedule Technical Discovery
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
+      <CTASection
+        title="Build a future-ready foundation"
+        description="Discuss your project with our engineering leaders. No sales pressure, just technical clarity."
+        primaryAction={{ text: "Schedule Technical Discovery", href: "/contact" }}
+      />
     </div>
   );
 }

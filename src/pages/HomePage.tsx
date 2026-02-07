@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { CTASection } from '../components/CTASection';
 import {
   ArrowRight,
   Cloud,
@@ -300,26 +301,11 @@ export function HomePage() {
       </section>
 
       {/* CTA - Floating Card Design */}
-      <section className="py-20 bg-white border-t border-slate-200">
-        <div className="container-custom">
-          <div className="relative rounded-[2.5rem] bg-slate-50 overflow-hidden px-6 py-16 text-center border border-slate-100 shadow-sm">
-            {/* Grid Background */}
-            <div className="absolute inset-0 bg-[linear-gradient(rgba(0,0,0,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(0,0,0,0.02)_1px,transparent_1px)] bg-[size:40px_40px] pointer-events-none"></div>
-
-            <div className="relative z-10">
-              <h2 className="text-3xl md:text-4xl font-display font-bold mb-6 tracking-tight text-slate-900">
-                Ready to scale your infrastructure?
-              </h2>
-              <p className="text-slate-500 text-lg max-w-2xl mx-auto mb-8 font-light leading-relaxed">
-                Join the forward-thinking companies building their future with Tec Elevate.
-              </p>
-              <Link to="/contact" className="inline-flex items-center justify-center px-8 py-3 text-base font-semibold text-white transition-all duration-200 bg-slate-900 rounded-full hover:bg-slate-800 hover:shadow-lg hover:-translate-y-0.5 shadow-md">
-                Start Your Transformation
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
+      <CTASection
+        title="Ready to scale your infrastructure?"
+        description="Join the forward-thinking companies building their future with Tec Elevate."
+        primaryAction={{ text: "Start Your Transformation", href: "/contact" }}
+      />
 
 
     </div>

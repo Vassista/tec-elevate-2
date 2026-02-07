@@ -1,4 +1,6 @@
 import { Users, Target, Shield, Zap } from 'lucide-react';
+import { HeroSection } from '../components/HeroSection';
+import { CTASection } from '../components/CTASection';
 
 export function AboutPage() {
   const stats = [
@@ -32,27 +34,11 @@ export function AboutPage() {
   return (
     <div className="bg-background min-h-screen">
       {/* Hero - Modern Enterprise Style */}
-      <section className="pt-32 pb-24 relative overflow-hidden">
-        {/* Background Grid */}
-        {/* Background Grid with Fade Out */ }
-        <div className="absolute inset-0 bg-[linear-gradient(rgba(0,0,0,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(0,0,0,0.02)_1px,transparent_1px)] bg-[size:40px_40px] pointer-events-none [mask-image:linear-gradient(to_bottom,black_60%,transparent_100%)]"></div>
-
-        <div className="container-custom text-center relative z-10">
-           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-100 border border-slate-200 text-xs font-semibold text-slate-600 mb-8 tracking-wide uppercase">
-             <div className="w-1.5 h-1.5 rounded-full bg-slate-500 animate-pulse"></div>
-             Who We Are
-           </div>
-
-           <h1 className="text-5xl md:text-7xl font-display font-bold text-slate-900 mb-8 tracking-tight leading-[1.1]">
-            We bridge the gap between<br />
-            <span className="text-transparent bg-clip-text bg-gradient-accent">strategy</span> and <span className="text-transparent bg-clip-text bg-gradient-accent">execution.</span>
-           </h1>
-
-           <p className="text-xl text-slate-500 max-w-3xl mx-auto leading-relaxed font-light">
-              Tec Elevate is a technology consultancy built for the modern era. We reject the bloated, slow processes of traditional firms in favor of agility, precision, and measurable impact.
-           </p>
-        </div>
-      </section>
+      <HeroSection
+        badgeText="Who We Are"
+        title={<>We bridge the gap between<br /><span className="text-transparent bg-clip-text bg-gradient-accent">strategy</span> and <span className="text-transparent bg-clip-text bg-gradient-accent">execution.</span></>}
+        description="Tec Elevate is a technology consultancy built for the modern era. We reject the bloated, slow processes of traditional firms in favor of agility, precision, and measurable impact."
+      />
 
       {/* Leadership Section */}
       <section className="section bg-white border-y border-gray-100">
@@ -203,24 +189,11 @@ export function AboutPage() {
       </section>
 
       {/* Join CTA - Floating Card Design */}
-      <section className="py-20 bg-white border-t border-slate-200">
-        <div className="container-custom">
-          <div className="relative rounded-[2.5rem] bg-slate-50 overflow-hidden px-6 py-16 text-center border border-slate-100 shadow-sm">
-            {/* Grid Background */}
-            <div className="absolute inset-0 bg-[linear-gradient(rgba(0,0,0,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(0,0,0,0.02)_1px,transparent_1px)] bg-[size:40px_40px] pointer-events-none"></div>
-
-            <div className="relative z-10">
-              <h2 className="text-3xl md:text-4xl font-display font-bold mb-6 tracking-tight text-slate-900">Want to work with the best?</h2>
-              <p className="text-slate-500 text-lg max-w-2xl mx-auto mb-8 font-light leading-relaxed">
-                We're always looking for exceptional engineering talent. If you obsess over code quality and impact, we want to talk.
-              </p>
-              <a href="/contact" className="inline-flex items-center justify-center px-8 py-3 text-base font-semibold text-white transition-all duration-200 bg-slate-900 rounded-full hover:bg-slate-800 hover:shadow-lg hover:-translate-y-0.5 shadow-md">
-                Check Open Positions
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
+      <CTASection
+        title="Want to work with the best?"
+        description="We're always looking for exceptional engineering talent. If you obsess over code quality and impact, we want to talk."
+        primaryAction={{ text: "Check Open Positions", href: "/contact" }}
+      />
     </div>
   );
 }
