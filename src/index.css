@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;400;500;600;700&family=Manrope:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -6,20 +6,19 @@
 
 @layer base {
   body {
-    @apply bg-background text-text-main font-sans antialiased selection:bg-primary-light selection:text-white;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.03'/%3E%3C/svg%3E");
+    @apply bg-background text-text-main font-sans antialiased selection:bg-accent selection:text-white;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    @apply font-serif text-text-main tracking-tight;
+    @apply font-display tracking-tight text-text-main;
   }
 
   h1 {
-    @apply text-5xl md:text-6xl lg:text-7xl font-light leading-[1.1] mb-6;
+    @apply text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.1] mb-6;
   }
 
   h2 {
-    @apply text-3xl md:text-4xl lg:text-5xl font-light mb-4;
+    @apply text-3xl md:text-4xl lg:text-5xl font-semibold mb-4;
   }
 
   p {
@@ -33,36 +32,43 @@
   }
 
   .btn {
-    @apply inline-flex items-center justify-center px-8 py-4 rounded-full font-medium transition-all duration-300 relative overflow-hidden;
+    @apply inline-flex items-center justify-center px-6 py-3 rounded-lg font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2;
   }
 
   .btn-primary {
-    @apply bg-primary text-white hover:bg-primary-dark hover:shadow-glow hover:-translate-y-1;
+    @apply bg-primary text-white hover:bg-primary-light focus:ring-primary shadow-sm hover:shadow-glow;
   }
 
   .btn-secondary {
-    @apply bg-transparent border border-text-main text-text-main hover:bg-text-main hover:text-white;
+    @apply bg-white border border-border text-text-main hover:bg-surface-highlight focus:ring-border;
+  }
+
+  .btn-accent {
+    @apply bg-accent text-white hover:bg-accent-dark focus:ring-accent shadow-glow;
   }
 
   .card {
-    @apply bg-surface/50 backdrop-blur-sm border border-white/50 rounded-2xl p-8 hover:bg-surface transition-all duration-300 hover:shadow-card hover:-translate-y-2;
+    @apply bg-surface border border-border rounded-xl p-6 transition-all duration-300 hover:shadow-card hover:-translate-y-1;
+  }
+
+  .glass-panel {
+    @apply bg-white/70 backdrop-blur-md border-b border-white/20;
   }
 
   .section {
-    @apply py-20 md:py-32;
+    @apply py-20 md:py-24;
   }
 
   .nav-link {
-    @apply text-text-muted hover:text-primary transition-colors relative after:content-[''] after:absolute after:w-0 after:h-px after:bg-primary after:left-0 after:-bottom-1 after:transition-all hover:after:w-full;
-  }
-}
-
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+    @apply text-text-muted hover:text-text-main font-medium transition-colors;
   }
 
-  .clip-organic-1 {
-    clip-path: polygon(0% 0%, 100% 0%, 100% 85%, 50% 100%, 0% 85%);
+  .grid-bg {
+    @apply relative bg-background;
+    background-image:
+      linear-gradient(to right, rgba(226, 232, 240, 0.4) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(226, 232, 240, 0.4) 1px, transparent 1px);
+    background-size: 40px 40px;
+    mask-image: radial-gradient(ellipse at center, black 50%, transparent 100%);
   }
 }

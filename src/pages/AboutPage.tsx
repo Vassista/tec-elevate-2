@@ -1,164 +1,103 @@
-import { Award, Users, Lightbulb, MessageCircle, ArrowRight } from 'lucide-react';
+import { Users, Target, Shield, Clock } from 'lucide-react';
 
 export function AboutPage() {
-  const expertise = [
-    {
-      icon: Award,
-      title: 'Technical Excellence',
-      description: 'Hands-on experience with AI platforms, Salesforce ecosystems, cloud infrastructure, and modern development frameworks.'
-    },
-    {
-      icon: Users,
-      title: 'Business Perspective',
-      description: 'We understand P&L impact and stakeholder dynamics. Technology decisions are always evaluated through a business lens.'
-    },
-    {
-      icon: Lightbulb,
-      title: 'Practical Implementation',
-      description: 'We prioritize solutions that can be deployed, adopted, and maintained. Sustainability matters as much as innovation.'
-    },
-    {
-      icon: MessageCircle,
-      title: 'Transparent Communication',
-      description: "Honest timelines, clear trade-offs, and regular progress updates. You'll always know exactly where things stand."
-    },
-  ];
-
-  const approach = [
-    {
-      number: '01',
-      title: 'Discovery & Assessment',
-      description: 'We start by understanding your business context, current challenges, and objectives. This informs every recommendation we make.'
-    },
-    {
-      number: '02',
-      title: 'Strategic Planning',
-      description: 'Together, we develop a clear roadmap with defined milestones, deliverables, and success metrics aligned to your goals.'
-    },
-    {
-      number: '03',
-      title: 'Collaborative Execution',
-      description: 'We work alongside your team, maintaining open communication and adapting as needs evolve during the project.'
-    },
-    {
-      number: '04',
-      title: 'Sustainable Outcomes',
-      description: 'Our goal is to deliver solutions you can maintain and build upon—not create dependencies or technical debt.'
-    },
+  const stats = [
+    { label: 'Years Experience', value: '15+' },
+    { label: 'Enterprise Projects', value: '200+' },
+    { label: 'Client Retention', value: '98%' },
+    { label: 'Certified Experts', value: '50+' },
   ];
 
   return (
-    <div className="overflow-hidden">
-      {/* Header */}
-      <section className="pt-32 pb-20 relative bg-surface">
-         <div className="container-custom text-center relative z-10">
-           {/* Decorative organic shape */}
-           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-secondary/5 rounded-full blur-[100px] -z-10"></div>
+    <div className="bg-background">
+      {/* Hero */}
+      <section className="pt-32 pb-20 border-b border-border bg-gradient-to-b from-surface-highlight to-background">
+        <div className="container-custom">
+          <div className="max-w-3xl">
+            <h1 className="text-4xl md:text-6xl font-display font-bold text-primary mb-8">
+              We bridge the gap between <span className="text-accent">strategy</span> and <span className="text-accent">execution</span>.
+            </h1>
+            <p className="text-xl text-text-muted leading-relaxed">
+              Tec Elevate is a technology consultancy built for the modern era. We reject the bloated, slow processes of traditional firms in favor of agility, precision, and measurable impact.
+            </p>
+          </div>
+        </div>
+      </section>
 
-           <h1 className="text-5xl md:text-7xl font-serif text-text-main mb-8 animate-fade-up">
-             Technology partners <br/>focused on your <span className="text-primary italic">success</span>
-           </h1>
-           <p className="text-xl text-text-muted max-w-3xl mx-auto font-light leading-relaxed animate-fade-up" style={{ animationDelay: '0.2s' }}>
-             We help visionary leaders navigate digital transformation with clarity and confidence. Practical, outcome-focused solutions for complex challenges.
-           </p>
-         </div>
+      {/* Stats */}
+      <section className="py-12 border-b border-border">
+        <div className="container-custom">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+            {stats.map((stat) => (
+              <div key={stat.label}>
+                <div className="text-4xl font-display font-bold text-primary mb-2">{stat.value}</div>
+                <div className="text-sm text-text-muted font-medium uppercase tracking-wider">{stat.label}</div>
+              </div>
+            ))}
+          </div>
+        </div>
       </section>
 
       {/* Mission */}
-      <section className="section py-20 relative">
+      <section className="section">
         <div className="container-custom">
-          <div className="bg-primary-dark rounded-[2rem] p-8 md:p-16 relative overflow-hidden shadow-card">
-            <div className="absolute top-0 right-0 w-96 h-96 bg-white/5 rounded-full blur-3xl translate-x-1/4 -translate-y-1/4"></div>
-            <div className="relative z-10 max-w-4xl mx-auto text-center">
-              <span className="text-highlight font-medium tracking-widest uppercase text-sm mb-6 block">Our Mission</span>
-              <h2 className="text-3xl md:text-5xl font-serif text-white mb-8 leading-tight">
-                To make modern technology accessible and impactful for businesses of all sizes.
-              </h2>
-              <p className="text-lg md:text-xl text-white/80 leading-relaxed font-light">
-                We believe technology should drive measurable results—not create unnecessary complexity. We achieve this by combining deep technical expertise with clear communication, transparent processes, and a commitment to understanding your business.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Expertise */}
-      <section className="section py-20 bg-surface/50">
-        <div className="container-custom">
-          <div className="text-center mb-16">
-             <h2 className="text-4xl font-serif text-text-main mb-4">What We Bring</h2>
-             <p className="text-text-muted">Technical depth combined with business acumen</p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
-            {expertise.map((item) => (
-              <div key={item.title} className="card group hover:bg-surface">
-                <div className="flex items-start">
-                  <div className="flex-shrink-0">
-                    <div className="w-14 h-14 bg-surface border border-border rounded-xl flex items-center justify-center text-primary shadow-sm group-hover:scale-110 transition-transform duration-300">
-                      <item.icon className="w-7 h-7" />
-                    </div>
-                  </div>
-                  <div className="ml-6">
-                    <h3 className="text-xl font-serif font-medium text-text-main mb-3 group-hover:text-primary transition-colors">
-                      {item.title}
-                    </h3>
-                    <p className="text-text-muted leading-relaxed">
-                      {item.description}
-                    </p>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Approach */}
-      <section className="section py-24">
-        <div className="container-custom">
-          <div className="flex flex-col md:flex-row justify-between items-end mb-16 border-b border-border pb-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div>
-              <span className="text-secondary font-medium tracking-widest uppercase text-sm mb-2 block">Our Process</span>
-              <h2 className="text-4xl md:text-5xl font-serif text-text-main">
-                How We Work
+              <h2 className="text-3xl md:text-4xl font-display font-bold text-primary mb-6">
+                Our Philosophy
               </h2>
-            </div>
-            <p className="text-text-muted mt-4 md:mt-0 max-w-md">
-              A collaborative, transparent process designed to deliver value at every stage.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {approach.map((step) => (
-              <div key={step.number} className="relative group">
-                <div className="text-7xl font-serif font-bold text-border/50 mb-6 group-hover:text-primary/20 transition-colors">
-                  {step.number}
-                </div>
-                <h3 className="text-xl font-serif font-medium text-text-main mb-3">
-                  {step.title}
-                </h3>
-                <p className="text-text-muted leading-relaxed text-sm">
-                  {step.description}
+              <div className="space-y-6 text-lg text-text-muted">
+                <p>
+                  Technology should enable business, not restrict it. Too often, we see companies trapped by legacy systems or paralyzed by over-engineered solutions.
+                </p>
+                <p>
+                  We believe in <strong>Pragmatic Innovation</strong>. This means we choose boring technology when it works, and cutting-edge solutions when they offer a genuine competitive advantage.
+                </p>
+                <p>
+                  Our team is composed of senior engineers and strategists who have "been there, done that." We don't send juniors to learn on your dime.
                 </p>
               </div>
-            ))}
+            </div>
+            <div className="grid grid-cols-2 gap-6">
+               <div className="space-y-6 mt-8">
+                  <div className="bg-surface-highlight p-6 rounded-xl border border-border">
+                    <Target className="w-8 h-8 text-accent mb-4" />
+                    <h3 className="font-bold text-primary mb-2">Outcome Focused</h3>
+                    <p className="text-sm text-text-muted">We measure success by business KPIs, not lines of code.</p>
+                  </div>
+                  <div className="bg-surface-highlight p-6 rounded-xl border border-border">
+                    <Shield className="w-8 h-8 text-accent mb-4" />
+                    <h3 className="font-bold text-primary mb-2">Security First</h3>
+                    <p className="text-sm text-text-muted">Enterprise-grade security is baked into everything we build.</p>
+                  </div>
+               </div>
+               <div className="space-y-6">
+                  <div className="bg-surface-highlight p-6 rounded-xl border border-border">
+                    <Users className="w-8 h-8 text-accent mb-4" />
+                    <h3 className="font-bold text-primary mb-2">Senior Team</h3>
+                    <p className="text-sm text-text-muted">Direct access to experts, no middlemen.</p>
+                  </div>
+                  <div className="bg-surface-highlight p-6 rounded-xl border border-border">
+                    <Clock className="w-8 h-8 text-accent mb-4" />
+                    <h3 className="font-bold text-primary mb-2">Rapid Delivery</h3>
+                    <p className="text-sm text-text-muted">We ship fast and iterate based on real feedback.</p>
+                  </div>
+               </div>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Closing Statement & CTA */}
-      <section className="section bg-surface border-t border-border">
+      {/* Team/Culture */}
+      <section className="py-24 bg-primary text-white">
         <div className="container-custom text-center">
-          <div className="max-w-3xl mx-auto">
-            <p className="text-2xl md:text-3xl font-serif text-text-main mb-8 leading-snug">
-              Technology transformation doesn't have to be overwhelming. With the right partner, it becomes a competitive advantage.
-            </p>
-            <a href="/contact" className="btn btn-primary group">
-              Schedule a Conversation
-              <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-            </a>
-          </div>
+          <h2 className="text-3xl md:text-4xl font-display font-bold mb-6">Built by Engineers, for Engineers</h2>
+          <p className="text-white/60 max-w-2xl mx-auto mb-10">
+            We foster a culture of technical excellence, continuous learning, and radical transparency.
+          </p>
+          <a href="/contact" className="btn bg-white text-primary border-none hover:bg-white/90">
+            Join Our Team
+          </a>
         </div>
       </section>
     </div>
