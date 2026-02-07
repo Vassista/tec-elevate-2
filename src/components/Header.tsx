@@ -39,7 +39,7 @@ export function Header() {
           {/* Logo */}
           <Link
             to="/"
-            className="text-2xl font-display font-bold text-primary tracking-tight"
+            className="text-2xl font-display font-bold text-primary tracking-tight transition-colors"
           >
             Tec Elevate
           </Link>

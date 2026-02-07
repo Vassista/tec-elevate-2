@@ -3,13 +3,13 @@ import { BarChart, Check, Zap, Target } from 'lucide-react';
 export function WhyTecElevatePage() {
   return (
     <div className="bg-background">
-      <section className="pt-32 pb-20 bg-primary text-white">
+      <section className="pt-32 pb-20 bg-surface-highlight border-b border-border">
         <div className="container-custom text-center">
-          <p className="text-sm font-bold text-accent-light tracking-widest uppercase mb-4">Our Methodology</p>
-          <h1 className="text-4xl md:text-6xl font-display font-bold mb-8">
-            Why leading companies<br />choose Tec Elevate.
+          <p className="text-sm font-semibold text-accent mb-4 tracking-widest uppercase">Our Methodology</p>
+          <h1 className="text-4xl md:text-6xl font-display font-bold text-primary mb-6">
+            Why leading companies<br />choose <span className="text-accent">Tec Elevate</span>.
           </h1>
-          <p className="text-xl text-white/70 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-lg text-text-muted max-w-2xl mx-auto leading-relaxed">
             We don't just deliver code; we deliver certainty. Our proven methodology ensures that every project is delivered on time, on budget, and on spec.
           </p>
         </div>

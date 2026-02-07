@@ -26,10 +26,11 @@ export function ContactPage() {
     <div className="bg-background min-h-screen">
       <section className="pt-32 pb-20 bg-surface-highlight border-b border-border">
         <div className="container-custom text-center">
+          <p className="text-sm font-semibold text-accent mb-4 tracking-widest uppercase">Get in Touch</p>
           <h1 className="text-4xl md:text-6xl font-display font-bold text-primary mb-6">
             Let's build something <span className="text-accent">great</span>.
           </h1>
-          <p className="text-lg text-text-muted max-w-2xl mx-auto">
+          <p className="text-lg text-text-muted max-w-2xl mx-auto leading-relaxed">
             Ready to start your digital transformation journey? Our team is ready to help you navigate the complex technology landscape.
           </p>
         </div>

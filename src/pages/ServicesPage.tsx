@@ -55,13 +55,13 @@ export function ServicesPage() {
   return (
     <div className="bg-background min-h-screen">
       {/* Header */}
-      <section className="pt-32 pb-16 bg-surface-highlight border-b border-border">
+      <section className="pt-32 pb-20 bg-surface-highlight border-b border-border">
         <div className="container-custom text-center">
           <p className="text-sm font-semibold text-accent mb-4 tracking-widest uppercase">Our Capabilities</p>
-          <h1 className="text-4xl md:text-5xl font-display font-bold text-primary mb-6">
-            Technical Excellence for<br />Modern Enterprise
+          <h1 className="text-4xl md:text-6xl font-display font-bold text-primary mb-6">
+            Technical Excellence for<br /><span className="text-accent">Modern Enterprise</span>
           </h1>
-          <p className="text-lg text-text-muted max-w-2xl mx-auto">
+          <p className="text-lg text-text-muted max-w-2xl mx-auto leading-relaxed">
             We deliver end-to-end technology solutions, from strategic planning to implementation and ongoing optimization.
           </p>
         </div>

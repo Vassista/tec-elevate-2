@@ -11,16 +11,16 @@ export function AboutPage() {
   return (
     <div className="bg-background">
       {/* Hero */}
-      <section className="pt-32 pb-20 border-b border-border bg-gradient-to-b from-surface-highlight to-background">
-        <div className="container-custom">
-          <div className="max-w-3xl">
-            <h1 className="text-4xl md:text-6xl font-display font-bold text-primary mb-8">
-              We bridge the gap between <span className="text-accent">strategy</span> and <span className="text-accent">execution</span>.
-            </h1>
-            <p className="text-xl text-text-muted leading-relaxed">
+      {/* Hero */}
+      <section className="pt-32 pb-20 bg-surface-highlight border-b border-border">
+        <div className="container-custom text-center">
+           <p className="text-sm font-semibold text-accent mb-4 tracking-widest uppercase">Who We Are</p>
+           <h1 className="text-4xl md:text-6xl font-display font-bold text-primary mb-6">
+            We bridge the gap between<br /><span className="text-accent">strategy</span> and <span className="text-accent">execution</span>.
+           </h1>
+           <p className="text-lg text-text-muted max-w-2xl mx-auto leading-relaxed">
               Tec Elevate is a technology consultancy built for the modern era. We reject the bloated, slow processes of traditional firms in favor of agility, precision, and measurable impact.
-            </p>
-          </div>
+           </p>
         </div>
       </section>
 
