@@ -39,9 +39,10 @@ export function Header() {
           {/* Logo */}
           <Link
             to="/"
-            className="text-2xl font-display font-bold text-primary tracking-tight transition-colors"
+            className="flex items-center gap-2 text-2xl font-display font-bold text-primary tracking-tight transition-colors"
           >
-            Tec Elevate
+            <img src="/fav-icon.svg" alt="Tec Elevate Logo" className="h-8 w-8" />
+            <span>Tec Elevate</span>
           </Link>
 
           {/* Desktop Navigation */}
